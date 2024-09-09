@@ -1,6 +1,6 @@
 class HealthController {
     static getHealth(req, res) {
-        res.status(200).json({ status: 'ok' });
+        res.status(200).json({ status: ' Test Ok!!!!' });
     }
 }
 

@@ -4,6 +4,13 @@ const productRepository = require('../../database/repositories/ProductRepository
 class ProductController {
     constructor() {
         this.productUseCases = new ProductUseCases(productRepository);
+        
+        // Asegurando que el contexto (this) se mantenga correcto
+        this.create = this.create.bind(this);
+        this.getById = this.getById.bind(this);
+        this.getAll = this.getAll.bind(this);
+        this.update = this.update.bind(this);
+        this.delete = this.delete.bind(this);
     }
 
     async create(req, res) {
